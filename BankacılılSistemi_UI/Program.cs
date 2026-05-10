@@ -4,7 +4,6 @@ using BankacılılSistemi_EL;
 using System;
 using System.Linq;
 
-// 1. ÖNCE VERİTABANINDA KULLANICI VAR MI KONTROL ET (Login olabilmek için)
 using (var context = new BankDbContext())
 {
     if (!context.Users.Any())
@@ -14,12 +13,12 @@ using (var context = new BankDbContext())
     }
 }
 
-// 2. SERVİSLERİ BAŞLAT
+// 1. SERVİSLERİ BAŞLAT
 UserService userService = new UserService();
 AccountService accountService = new AccountService();
 User loggedInUser = null;
 
-// 3. GİRİŞ EKRANI (Login)
+// 2. GİRİŞ EKRANI (Login)
 while (loggedInUser == null)
 {
     Console.WriteLine("=== GİRİŞ YAPIN ===");
@@ -39,7 +38,7 @@ while (loggedInUser == null)
 Console.Clear();
 Console.WriteLine($"Hoş geldin, {loggedInUser.NameSurname}!");
 
-// 4. ANA MENÜ DÖNGÜSÜ
+// 3. ANA MENÜ DÖNGÜSÜ
 bool devamEdilsinMi = true;
 
 while (devamEdilsinMi)
@@ -68,7 +67,7 @@ while (devamEdilsinMi)
                 IBAN = iban,
                 CurrencyType = doviz,
                 Balance = 0,
-                UserId = loggedInUser.Id // ARTIK STATİK 1 DEĞİL, GİRİŞ YAPAN KİŞİ!
+                UserId = loggedInUser.Id 
             };
 
             string sonuc = accountService.CreateAccount(yeniHesap);

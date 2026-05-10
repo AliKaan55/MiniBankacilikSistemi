@@ -71,8 +71,8 @@ namespace BankacılılSistemi_BL
                 Amount = amount,
                 TransactionDate = DateTime.Now,
                 Type = TransactionType.Deposit,
-                ReceiverAccountId = accountId, // Paranın girdiği hesap
-                SenderAccountId = null, // Veya bu satırı tamamen sil/null yap (eğer SQL izin veriyorsa)
+                ReceiverAccountId = accountId, 
+                SenderAccountId = null, 
                 Description = "Nakit Para Yatırma"
             };
 
