@@ -10,7 +10,7 @@ namespace BankacılılSistemi_DAL
         public DbSet<User> Users { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=DESKTOP-L8F1FGT\\SQLEXPRESS01;Database=BankDB;Trusted_Connection=True; TrustServerCertificate=True;");
+            optionsBuilder.UseSqlServer("Server=YOUR_SERVER\\SQLEXPRESS01;Database=BankDB;Trusted_Connection=True; TrustServerCertificate=True;");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
